@@ -23,7 +23,7 @@ class NETWORK(torch.nn.Module):
         return x
 X = torch.rand(N,in_put)*2.0-1.0
 X_delay = torch.zeros_like(X)
-X_delay = X/2.0
+X_delay = X/2.0  #generate delay copy
 X = X.requires_grad_()
 net = NETWORK()
 optimizer = torch.optim.Adam(net.parameters(), lr=0.5e-3)
@@ -75,5 +75,5 @@ ax[1].set_ylabel('Loss',fontsize = 10)
 ax[1].tick_params(labelsize = 10,direction = 'in')
 ax[1].spines['right'].set_visible(False)
 ax[1].spines['top'].set_visible(False)
-plt.savefig('F:/ChhromeDownload/acc-pred-epoches-loss.png',dpi = 300)
+# plt.savefig('F:/ChhromeDownload/acc-pred-epoches-loss.png',dpi = 300)
 plt.show()

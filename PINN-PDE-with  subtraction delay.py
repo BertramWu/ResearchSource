@@ -88,7 +88,8 @@ print('The running time:',time.time()-start)
 
 net.eval()
 net = net.to('cpu')  #####
-torch.save(net.state_dict(),'E:/python/Jupyter/TrainedModels_Saving/series_training_model1.pth')
+# torch.save(net.state_dict(),'E:/python/Jupyter/TrainedModels_Saving/series_training_model1.pth')
+torch.save(net.state_dict(),'./nn_subtraction_delay_PDE.pth')
 N_t,N_x = 500,100
 t = torch.linspace(0,5,N_t)
 x = torch.linspace(0,1,N_x)

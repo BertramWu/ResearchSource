@@ -22,7 +22,8 @@ class NETWORK(torch.nn.Module):
         return x
 model = NETWORK()
 
-model.load_state_dict(torch.load("E:/python/Jupyter/TrainedModels_Saving/series_training_model1.pth"))
+# model.load_state_dict(torch.load("E:/python/Jupyter/TrainedModels_Saving/series_training_model1.pth"))
+model.load_state_dict(torch.load("./nn_subtraction_delay_PDE.pth"))
 
 #plot 3-D figure
 N_t,N_x = 500,100
@@ -47,7 +48,7 @@ ax.tick_params(labelsize = 10,direction='in')
 ax.set_xlabel('t',fontsize = 10)
 ax.set_ylabel('x',fontsize = 10)
 ax.set_title('u(t,x)',fontsize = 10)
-plt.savefig('F:/ChhromeDownload/3dfigure.png',dpi = 300,meshgrid =False)
+# plt.savefig('F:/ChhromeDownload/3dfigure.png',dpi = 300,meshgrid =False)
 
 # plot heat map,100
 N_t ,N_x = 500,500
@@ -72,10 +73,11 @@ ax2.set_title('u(t,x)',fontsize =10)
 ax2.tick_params(labelsize = 10,direction='in')
 zbar = fig2.colorbar(im,ax =ax2)
 zbar.minorticks_on()
-plt.savefig('F:/ChhromeDownload/heatmap.png',dpi = 500,meshgrid =False)
+# plt.savefig('F:/ChhromeDownload/heatmap.png',dpi = 500,meshgrid =False)
 
 #plot accurate figure T:0-5 X:0-1
-df = pd.read_csv('F:/private/SCIFiles/PINN/series solution.csv')
+# df = pd.read_csv('F:/private/SCIFiles/PINN/series solution.csv')
+df = pd.read_csv('./series solution.csv')
 array = df[2:].values
 numarray = np.zeros_like(array)
 for i in range(array.shape[0]):

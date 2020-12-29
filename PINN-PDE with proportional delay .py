@@ -61,7 +61,7 @@ criterion = torch.nn.MSELoss()
 
 start = time.time()  # time point
 net.train()
-for e in range(1000 + 1):
+for e in range(10 + 1):
     for batch_x, batch_x_delay in Loader:
         X0 = X_ic[:, 1].detach()
         X = batch_x[:, 1].detach()
@@ -91,6 +91,8 @@ print('Training time cost:', time.time() - start)
 
 net.eval()
 net = net.to('cpu')  #####
+# torch.save(net.state_dict(),'E:/python/Jupyter/TrainedModels_Saving/nn_proportional_delay_PDE.pth')
+torch.save(net.state_dict(),'./nn_proportional_delay_PDE.pth')
 N_t, N_x = 100, 600
 t = torch.linspace(0, 1, N_t)
 x = torch.linspace(0, 2 * pi, N_x)

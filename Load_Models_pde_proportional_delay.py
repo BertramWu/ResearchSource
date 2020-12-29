@@ -22,7 +22,8 @@ class NETWORK(torch.nn.Module):
         return x
 model = NETWORK()
 
-model.load_state_dict(torch.load("E:/python/Jupyter/TrainedModels_Saving/sinhtcosx_for_spare_use.pth"))
+# model.load_state_dict(torch.load("E:/python/Jupyter/TrainedModels_Saving/sinhtcosx_for_spare_use.pth"))
+model.load_state_dict(torch.load("./nn_proportional_delay_PDE.pth"))
 
 #plot 3-D figure
 N_t,N_x = 500,100
@@ -56,7 +57,7 @@ ax1.set_ylabel('x',fontsize = 10)
 ax1.set_title('Exact solution',fontsize = 10)
 plt.subplots_adjust(wspace=0)
 
-plt.savefig('F:/ChhromeDownload/3dfigure-sinhxcosx.png',bbox_inches='tight',dpi = 300,meshgrid =False)
+# plt.savefig('F:/ChhromeDownload/3dfigure-sinhxcosx.png',bbox_inches='tight',dpi = 300,meshgrid =False)
 
 # plot heat map,100
 # N_t ,N_x = 500,500
@@ -121,5 +122,5 @@ ax3[2].set_xlabel('t')
 ax3[2].set_title('t=0.75')
 ax3[2].grid(True,linestyle = '-.')
 ax3[2].set_ylabel('u(t,x)')
-plt.savefig('F:/ChhromeDownload/acc_pred3-sinhtcosx.png',dpi = 300,meshgrid =False)
+# plt.savefig('F:/ChhromeDownload/acc_pred3-sinhtcosx.png',dpi = 300,meshgrid =False)
 plt.show()
