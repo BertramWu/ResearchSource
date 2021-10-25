@@ -1,4 +1,4 @@
-## description and usage:
+## Description and usage:
 1."PINN-ODE... .py" gives the network and figures of example 1 in section 3.1.
 2."PINN-PDE with proportional delay.py" and "Load_Models_pde_proportional_delay.py" are codes for example 2 in section3.2 .
 3."PINN-PDE with subtraction delay.py" and "Load_Models_pde_subtraction_delay.py" are used in section3.3 for example3,
